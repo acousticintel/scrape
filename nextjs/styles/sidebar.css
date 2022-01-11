@@ -1,0 +1,56 @@
+.sidebar{
+  @apply  min-h-screen flex flex-col flex-shrink;
+}
+.sidebar .sidebar-logo{
+  @apply flex justify-center items-center;
+}
+
+.sidebar > .divider{
+  @apply bg-blue-200 h-px opacity-40 mt-4 mb-8 mx-8 ;
+}
+
+.navTab{
+  @apply relative py-3 pl-6 pr-6 rounded-l-full;
+}
+
+.navTab a{
+  @apply z-30;
+}
+
+.navTab.active{
+  @apply bg-gray-100 text-gray-900;
+}
+
+.navTab > .navTab-circle{
+  @apply hidden;
+}
+
+.navTab > .navTab-box{
+  @apply hidden;
+}
+
+.navTab.active > .navTab-circle{
+  @apply block;
+}
+
+.navTab.active > .navTab-box{
+  @apply block;
+}
+
+.navTab.active > .navTab-circle.top{
+  @apply absolute h-8 w-8 -z-10 bg-blue-700 overflow-hidden
+  right-0 -top-8 rounded-full;
+}
+
+.navTab.active > .navTab-box.top{
+  @apply absolute h-4 w-4 -z-20 bg-gray-100 right-0 -top-4;
+}
+
+.navTab.active > .navTab-circle.btm{
+  @apply absolute h-8 w-8 -z-10 bg-blue-700 overflow-hidden
+  right-0 -bottom-8 rounded-full;
+}
+
+.navTab.active > .navTab-box.btm{
+  @apply absolute h-4 w-4 -z-20 bg-gray-100 right-0 -bottom-4;
+}

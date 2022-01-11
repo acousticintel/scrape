@@ -1,0 +1,42 @@
+/* Font import */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+/* @import "./calender.css"; */
+@import "./sidebar.css";
+@import "./dashboard.css";
+@import "./header.css";
+@import "./card.css";
+@import "./parameters.css";
+@import "./loader.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  @apply bg-blue-700;
+}
+
+body{
+  @apply font-body leading-normal tracking-normal 
+  text-white custom-scroll;
+}
+
+/* width */
+.custom-scroll::-webkit-scrollbar {
+  @apply w-2 h-2;
+}
+
+/* Track */
+.custom-scroll::-webkit-scrollbar-track {
+  @apply bg-blue-700;
+}
+
+/* Handle */
+.custom-scroll::-webkit-scrollbar-thumb {
+  @apply bg-blue-300 hover:bg-gray-100 rounded-full bg-opacity-80;
+}
+
+.page-content{
+  @apply flex p-8;
+}

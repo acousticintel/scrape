@@ -1,0 +1,22 @@
+.header{
+  @apply flex justify-around items-center w-full h-10 px-4;
+}
+
+.header:first-child{
+  @apply flex-shrink;
+}
+
+.header > form{
+  @apply flex-grow px-10;
+}
+
+.header > form input{
+  @apply w-full py-2 text-sm
+  bg-blue-200 rounded-md pl-10 focus:outline-none 
+  focus:bg-blue-100 text-gray-900;
+}
+
+.header:last-child{
+  @apply flex-shrink;
+}
+

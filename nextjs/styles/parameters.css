@@ -1,0 +1,31 @@
+.location-type{
+  @apply relative py-6 px-10 rounded-xl flex items-center 
+  justify-center gap-4 hover:bg-gray-200
+  transition-all duration-300;
+}
+
+.location-type.selected{
+  @apply bg-blue-900 text-white;
+}
+
+.location-type > .selected-icon{
+  @apply hidden absolute top-0 right-2 transition delay-100 
+  scale-0 duration-1000;
+}
+
+.location-type.selected > .selected-icon{
+  @apply flex-shrink flex justify-center scale-100;
+}
+
+.location-type input{
+  @apply bg-gray-100 appearance-none 
+  border-2 border-gray-200 rounded w-full py-2 
+  px-4 text-gray-400 leading-tight 
+  focus:text-gray-900 focus:outline-none 
+  focus:bg-white focus:border-blue-300;
+}
+
+.card-parameters button{
+  @apply flex py-3 px-4 md:px-6 bg-blue-500 rounded-lg 
+  mx-auto shadow-md text-white font-bold text-lg;
+}

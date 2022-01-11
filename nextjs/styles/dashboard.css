@@ -1,0 +1,8 @@
+.dashboard{
+  @apply flex flex-col flex-grow min-h-screen w-full 
+  bg-gray-100 rounded-3xl py-4 md:px-8 text-gray-700;
+}
+
+.dashboard .divider{
+  @apply bg-gray-200 h-px opacity-100 mt-2 mb-4 mx-40;
+}
