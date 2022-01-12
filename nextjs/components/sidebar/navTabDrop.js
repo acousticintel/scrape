@@ -18,12 +18,10 @@ function NavTabDrop({ router, text, list, href, icon }) {
     }
   }
 
-  if (typeof window !== "undefined") {
-    useEffect(() => {
-      checkOpen();
-      return () => setIsOpen(false)
-    }, [window.location.pathname])
-  }
+  useEffect(() => {
+    checkOpen();
+    return () => setIsOpen(false)
+  }, [window?.location.pathname, checkOpen])
 
   return (
     <>
