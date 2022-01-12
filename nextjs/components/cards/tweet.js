@@ -23,13 +23,16 @@ export default function Tweet({ t }) {
     let res = await flagTweet(t);
   }
 
-  useEffect(async () => {
-    if (t.user) {
-      let res = await isUserFlagged(t.user);
-      if (res) {
-        setFlagged(true);
+  useEffect(() => {
+    async function flgd(t){
+      if (t.user) {
+        let res = await isUserFlagged(t.user);
+        if (res) {
+          setFlagged(true);
+        }
       }
     }
+    flgd(t)
   }, [t, flaggedUsers])
 
   return (

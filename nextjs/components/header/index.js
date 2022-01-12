@@ -32,7 +32,7 @@ export default function Header() {
   const handleClick = (e) => {
     e.preventDefault();
     getTwitterSearch();
-    if(window.location.pathname !== '/results/twitterScrape')
+    if(router.pathname !== '/results/twitterScrape')
       router.push('results/twitterScrape');
   }
 

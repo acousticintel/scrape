@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 import { withRouter } from 'next/router';
 
 function NavTabDrop({ router, text, list, href, icon }) {
-
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = (event, link) => {
@@ -11,17 +9,17 @@ function NavTabDrop({ router, text, list, href, icon }) {
     router.push(link)
   }
 
-  const checkOpen = () => {
-    let loc = window.location.pathname;
-    if (loc.match(text.toLowerCase()) !== null) {
-      setIsOpen(true);
-    }
-  }
-
   useEffect(() => {
-    checkOpen();
+    const checkOpen = (loc) => {
+      if (loc.match(text.toLowerCase()) !== null) {
+        setIsOpen(true);
+      }
+    }
+
+    checkOpen(router.pathname);
+
     return () => setIsOpen(false)
-  }, [window?.location.pathname, checkOpen])
+  }, [router.pathname])
 
   return (
     <>
@@ -41,7 +39,6 @@ function NavTabDrop({ router, text, list, href, icon }) {
         <div className='flex flex-col'>
           {
             list && list.length > 0 && list.map((l, i) => {
-              console.log(l.href)
               return (
                 <div key={i} onClick={(e) => handleClick(e, l.href)}>
                   <>{l.icon}</>
