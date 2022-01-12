@@ -2,9 +2,9 @@
   "name": "dev",
   "private": true,
   "scripts": {
-    "dev": "node server.js",
+    "dev": "next dev -p 5100",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js",
+    "start": "next start -p 5100",
     "lint": "next lint"
   },
   "dependencies": {
