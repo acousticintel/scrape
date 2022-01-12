@@ -4,5 +4,8 @@ module.exports = {
     cwd: '~/apps/scrape/nextjs',
     script: 'npm',
     args: 'start',
+    env: {
+      NODE_ENV: 'production'
+    },
   }]
 }
