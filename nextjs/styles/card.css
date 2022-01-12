@@ -7,7 +7,7 @@
 }
 
 .card .card-content{
-  @apply rounded-xl shadow bg-white px-4;
+  @apply px-4;
 }
 
 .card .card-title{

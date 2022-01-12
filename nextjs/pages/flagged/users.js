@@ -3,13 +3,13 @@ import { motion } from 'framer-motion';
 //contexts
 import { useTwitter } from "../../context/twitterContext";
 //custom components
-import Tweet from "../../components/cards/tweet";
 import Header from "../../components/header";
 import Loader from "../../components/loader";
+import Users from '../../components/cards/user';
 
 
-export default function TwitterScrape() {
-  const { loading, twitterRes } = useTwitter();
+export default function FlaggedUsers() {
+  const { loading, flaggedUsers } = useTwitter();
 
   return (
     <div className='dashboard'>
@@ -17,7 +17,7 @@ export default function TwitterScrape() {
       <div className='divider' />
       <div className='card'>
         <div className="card-title">
-          <h1>Twitter Search Results</h1>
+          <h1>Flagged Users</h1>
         </div>
         <div className='mx-4'>
           {
@@ -26,10 +26,10 @@ export default function TwitterScrape() {
                 <Loader />
               </div>
               :
-              twitterRes?.length > 0 ?
-                twitterRes.map((t, i) => {
+              flaggedUsers?.length > 0 ?
+                flaggedUsers.map((u, i) => {
                   return (
-                    <Tweet key={i} t={t} />
+                    <Users key={i} u={u} />
                   )
                 })
                 :

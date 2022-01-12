@@ -2,10 +2,12 @@ import { useRouter } from 'next/router';
 import { useData } from '../../context/dataContext';
 import { FaRegBell } from 'react-icons/fa';
 import { CgSearch } from 'react-icons/cg';
+import { useTwitter } from '../../context/twitterContext';
 
 export default function Header() {
   const router = useRouter();
-  const { keyword, onSetKeyword, getTwitterSearch } = useData();
+  const { keyword, onSetKeyword } = useData();
+  const { getTwitterSearch } = useTwitter();
 
   // function that verifies value is of expected length
   const verifyLength = (value, length) => {

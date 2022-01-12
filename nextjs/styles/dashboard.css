@@ -1,6 +1,7 @@
 .dashboard{
   @apply flex flex-col flex-grow min-h-screen w-full 
-  bg-gray-100 rounded-3xl py-4 md:px-8 text-gray-700;
+    bg-gray-100 rounded-3xl py-4 md:px-8 text-gray-700
+    md:max-w-screen-sm lg:max-w-screen-md;
 }
 
 .dashboard .divider{

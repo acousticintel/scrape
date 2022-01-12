@@ -10,7 +10,11 @@
 }
 
 .navTab{
-  @apply relative py-3 pl-6 pr-6 rounded-l-full;
+  @apply relative mt-4 py-3 pl-6 pr-6 rounded-l-full;
+}
+
+.navTab > .navTab-content{
+  @apply flex justify-center items-center;
 }
 
 .navTab a{
@@ -26,7 +30,7 @@
 }
 
 .navTab > .navTab-box{
-  @apply hidden;
+  @apply hidden flex;
 }
 
 .navTab.active > .navTab-circle{

@@ -10,8 +10,10 @@ export default function Layout({ children }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className='page-content'>
-        <Sidebar />
-        {children}
+        <div className="flex min-w-full mx-auto">
+          <Sidebar />
+          {children}
+        </div>
       </div>
     </div>
   )

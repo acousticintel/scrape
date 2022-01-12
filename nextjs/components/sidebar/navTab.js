@@ -1,7 +1,7 @@
 import { withRouter } from 'next/router';
 import Link from 'next/link';
 
-function NavTab({ router, text, href }) {
+function NavTab({ router, text, href, icon }) {
 
   const handleClick = event => {
     event.preventDefault();
@@ -13,11 +13,14 @@ function NavTab({ router, text, href }) {
   return (
     <Link href={href}>
       <div className={`navTab ${isCurrentPath && 'active'}`}>
-        <div className="navTab-circle top" />
-        <div className="navTab-box top" />
-        <a className="text-center">{text}</a>
-        <div className="navTab-circle btm" />
-        <div className="navTab-box btm" />
+        <div className='navTab-circle top' />
+        <div className='navTab-box top' />
+        <div className='navTab-content'>
+          {icon}
+          <a className='text-center hidden md:block'>{text}</a>
+        </div>
+        <div className='navTab-circle btm' />
+        <div className='navTab-box btm' />
       </div>
     </Link>
   )
