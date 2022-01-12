@@ -1,8 +1,7 @@
-
 module.exports = {
   apps: [{
     name: "scrape",
-    cwd: '/home/bob/app/scrape/nextjs',
+    cwd: '~/apps/scrape/nextjs',
     script: 'npm',
     args: 'start',
   }]
