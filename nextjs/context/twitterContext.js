@@ -55,7 +55,7 @@ function useProvideTwitter() {
             radius
           };
 
-          axios.post('http://localhost:8000/twitter-search', body, {
+          axios.post('https://scrapeapi.acousticintel.com/twitter-search', body, {
             headers: {
               "Content-Type": "application/json"
             }
