@@ -20,12 +20,30 @@ export default function DateRangeComp() {
     return format(dt, 'yyyy-MM-dd')
   }
 
+  const defaultDates = () => {
+    let temp = {
+      startDate: new Date(),
+      endDate: new Date(),
+      key: 'selection',
+    };
+
+    let newdate = temp.startDate;
+    newdate.setDate(newdate.getDate() - 1); // minus the date
+
+    temp.startDate = new Date(newdate);
+    handleDateChange(temp);
+  }
+
   useEffect(() => {
     let st = `since:${formatDate(selectedDate.startDate)}`;
-    let ut = `until:${formatDate(selectedDate.startDate)}`;
+    let ut = `until:${formatDate(selectedDate.endDate)}`;
     let s = `${st} ${ut}`
     onSetDateRange(s);
   }, [selectedDate])
+
+  useEffect(() => {
+    defaultDates();
+  }, [])
 
   return (
     <div className='date-para'>
@@ -33,7 +51,7 @@ export default function DateRangeComp() {
       <div className='cont'>
         <DateRange
           showPreview={false}
-          minDate={new Date()}
+          maxDate={new Date()}
           ranges={[selectedDate]}
           onChange={handleSelect}
           moveRangeOnFirstSelection={true}

@@ -32,12 +32,6 @@ function useProvideData() {
   const onSetRadius = (val) => setRadius(val);
   const onSetDateRange = (val) => setDateRange(val);
 
-  useEffect(() => {
-    let d = dateRange;
-
-    console.log(d)
-  }, [dateRange])
-
   return {
     keyword, locsearch, city, lat, long, radius, dateRange,
     onSetKeyword, onSetLocSearch,onSetCity, onSetLat, 
