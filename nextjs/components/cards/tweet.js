@@ -8,10 +8,11 @@ import { AiOutlineHeart } from 'react-icons/ai';
 import { IoChatbubbleOutline, IoFlag } from 'react-icons/io5';
 //context
 import { useTwitter } from '../../context/twitterContext';
+import { getElapsedTime } from '../../context/utils';
 
 
 export default function Tweet({ t }) {
-  const { flagUser, flagTweet, flaggedUsers, isUserFlagged } = useTwitter();
+  const { flagUser, flagTweet, flaggedUsers, isUserFlagged, } = useTwitter();
   const [dropOpen, setDropOpen] = useState(false);
   const [flagged, setFlagged] = useState(false);
 
@@ -93,7 +94,7 @@ export default function Tweet({ t }) {
             )
           })
         }
-        <p className='text-gray-500 text-base py-1 my-0.5'>10:05 AM · Dec 19, 2020</p>
+        <p className='text-gray-500 text-base py-1 ml-2 my-0.5'>{`${getElapsedTime(t.date)} ago`}</p>
         <div className='border-gray-200 border-t my-1'></div>
         <div className='text-gray-500 flex'>
           <div className='flex items-center mr-6'>

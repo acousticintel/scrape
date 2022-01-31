@@ -21,7 +21,7 @@ export const useTwitter = () => {
 }
 
 function useProvideTwitter() {
-  const { keyword, locsearch, city, lat, long, radius } = useData();
+  const { keyword, locsearch, city, lat, long, radius, dateRange } = useData();
   const [loading, setLoading] = useState(false);
   const [twitterRes, setTwitterRes] = useState([]);
   const [flaggedUsers, setFlaggedUsers] = useState([]);
@@ -51,8 +51,9 @@ function useProvideTwitter() {
             keyword,
             locsearch,
             city,
-            lat, long,
-            radius
+            latlong: { lat, long },
+            radius,
+            dateRange
           };
 
           axios.post('https://scrapeapi.acousticintel.com/twitter-search', body, {
@@ -119,12 +120,12 @@ function useProvideTwitter() {
     }
   }
 
-  
+
 
   return {
     loading, onSetLoading,
     twitterRes, getTwitterSearch,
-    flagUser, flagTweet, 
+    flagUser, flagTweet,
     flaggedUsers, isUserFlagged
   }
 }

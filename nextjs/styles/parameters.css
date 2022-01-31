@@ -1,23 +1,23 @@
-.location-type{
+.location-type {
   @apply relative py-6 px-10 rounded-md flex items-center 
   justify-center gap-2 bg-gray-200 shadow-md hover:shadow-xl hover:bg-white
   transition-all duration-700;
 }
 
-.location-type.selected{
+.location-type.selected {
   @apply bg-blue-700 text-gray-200;
 }
 
-.location-type > .selected-icon{
+.location-type > .selected-icon {
   @apply hidden absolute top-0 right-2 transition delay-100 
   scale-0 duration-1000;
 }
 
-.location-type.selected > .selected-icon{
+.location-type.selected > .selected-icon {
   @apply flex-shrink flex justify-center scale-100;
 }
 
-.location-type input{
+.location-type input {
   min-width: 80px;
   @apply bg-gray-100 appearance-none border-2 
   border-gray-200 rounded w-full py-2 px-4 
@@ -26,7 +26,20 @@
   focus:border-blue-300;
 }
 
-.card-parameters button{
+.card-parameters .search {
   @apply flex py-3 px-4 md:px-6 bg-blue-500 rounded-lg 
   mx-auto shadow-md text-white font-bold text-lg;
+}
+
+.date-para {
+  box-shadow: 20px 20px 60px #d9d9d9, -20px -20px 60px #ffffff;
+  @apply w-full h-auto rounded-xl bg-white px-5 py-3;
+}
+
+.date-para h1 {
+  @apply text-xl font-light text-gray-500;
+}
+
+.date-para .cont {
+  @apply flex justify-center items-center;
 }

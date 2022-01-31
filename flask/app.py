@@ -27,8 +27,8 @@ def twitterSearch():
         locsearch = None
         radius = None
         city = None
-        lat = None
-        long = None
+        latlong = None
+        dateRange = None
 
         if request_data:
             if "keyword" in request_data:
@@ -43,11 +43,11 @@ def twitterSearch():
             if "city" in request_data:
                 city = request_data["city"]
 
-            if "lat" in request_data:
-                lat = request_data["lat"]
-
-            if "long" in request_data:
-                long = request_data["long"]
+            if "latlong" in request_data:
+                latlong = request_data["latlong"]
+            
+            if "dateRange" in request_data:
+                dateRange = request_data["dateRange"]
 
         if keyword != None and locsearch != None:
             if locsearch == "city":
@@ -56,12 +56,12 @@ def twitterSearch():
                 )
             elif locsearch == "geo":
                 geostring = "{lat}, {long}, {radius}km".format(
-                    lat=lat, long=long, radius=radius
+                    lat=latlong.lat, long=latlong.long, radius=radius
                 )
                 locQuery = 'geocode:"%s"' % geostring
 
-            query = "{keyword} {locsearchstr}".format(
-                keyword=keyword, locsearchstr=locQuery
+            query = "{keyword} {locsearchstr} {dateRange}".format(
+                keyword=keyword, locsearchstr=locQuery, dateRange=dateRange
             )
             # the scraped tweets, this is a generator
             scraped_tweets = sntwitter.TwitterSearchScraper(query).get_items()
